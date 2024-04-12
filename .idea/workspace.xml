@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6165064f-30a5-47f5-a97d-8b6f7ad4b1f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="6165064f-30a5-47f5-a97d-8b6f7ad4b1f9" name="Changes" comment="Added Linux">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/AnimalRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/AnimalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Camel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Donkey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Hamster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Horse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/PackAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Animals/Teachable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Yagodka-Veronika"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Yagodka-Veronika/FinalControlWork.git",
+    "accountId": "b977f5fa-9210-481b-b2bb-8d53b868140e"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
 }]]></component>
@@ -31,11 +50,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Программирование мама/FinalControlWork/src/main/java",
+    "onboarding.tips.debug.path": "E:/Программирование мама/FinalControlWork/src/main/java/Far/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Программирование мама\FinalControlWork\src\main\java" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,6 +72,23 @@
       <option name="presentableId" value="Default" />
       <updated>1712917573088</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added Linux">
+      <option name="closed" value="true" />
+      <created>1712929297018</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712929297018</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Linux">
+      <option name="closed" value="true" />
+      <created>1712929358441</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712929358441</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -57,5 +101,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Linux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Linux" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Far/Main.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
