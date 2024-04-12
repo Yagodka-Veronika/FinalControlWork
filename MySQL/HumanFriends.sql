@@ -1,12 +1,11 @@
-CREATE DATABASE IF NOT EXISTS HumanFriends;
+
+CREATE SCHEMA IF NOT EXISTS HumanFriends;
 USE HumanFriends;
-DROP DATABASE IF EXISTS HumanFriends;
-DROP TABLE IF EXISTS animal, pet, packAnimal, cat, dog, camel, horse, donkey;
 
 CREATE TABLE IF NOT EXISTS animal
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    typeOfAnimal CHAR(50)
+    typeOfAnimal VARCHAR(50)
 );
 
 INSERT INTO animal (typeOfAnimal) VALUES 
@@ -16,7 +15,7 @@ INSERT INTO animal (typeOfAnimal) VALUES
 CREATE TABLE IF NOT EXISTS pet
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    animal CHAR(50),
+    animal VARCHAR(50),
     animal_id INT,
     FOREIGN KEY (animal_id)
 	REFERENCES animal(id)
@@ -25,28 +24,29 @@ CREATE TABLE IF NOT EXISTS pet
 CREATE TABLE IF NOT EXISTS packAnimal
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    animal CHAR(50),
+    animal VARCHAR(50),
     animal_id INT,
     FOREIGN KEY (animal_id)
 	REFERENCES animal(id)
 ); 
 
+
 INSERT INTO pet (animal, animal_id) VALUES
 ("Cat", 1),
 ("Dog", 1),
-("Hamster", 1),
+("Hamster", 1);
 
 
 INSERT INTO packAnimal (animal, animal_id) VALUES
 ("Camel", 2),
 ("Donkey", 2),
-("Horse", 2),
+("Horse", 2);
 
 
-CREATE TABLE cat 
+CREATE TABLE IF NOT EXISTS cat 
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    animal_name CHAR(50),
+    animal_name VARCHAR(50),
     birthday DATE,
     commands TEXT,
     pet_id INT,
@@ -54,10 +54,10 @@ CREATE TABLE cat
 	REFERENCES pet(id)
 );
 
-CREATE TABLE dog 
+CREATE TABLE IF NOT EXISTS dog 
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    animal_name CHAR(50),
+    animal_name VARCHAR(50),
     birthday DATE,
     commands TEXT,
     pet_id INT,
@@ -65,10 +65,10 @@ CREATE TABLE dog
 	REFERENCES pet(id)
 );
 
-CREATE TABLE hamster
+CREATE TABLE IF NOT EXISTS hamster
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    animal_name CHAR(50),
+    animal_name VARCHAR(50),
     birthday DATE,
     commands TEXT,
     pet_id INT,
@@ -77,10 +77,10 @@ CREATE TABLE hamster
 );
 
 
-CREATE TABLE camel
+CREATE TABLE IF NOT EXISTS camel
 (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    animal_name CHAR(50),
+    animal_name VARCHAR(50),
     birthday DATE,
     commands TEXT,
     packAnimal_id INT,
@@ -88,10 +88,10 @@ CREATE TABLE camel
 	REFERENCES packAnimal(id)
 );
 
-CREATE TABLE donkey 
+CREATE TABLE IF NOT EXISTS donkey 
 (
 	 id INT PRIMARY KEY AUTO_INCREMENT,
-    animal_name CHAR(50),
+    animal_name VARCHAR(50),
     birthday DATE,
     commands TEXT,
     packAnimal_id INT,
@@ -99,10 +99,10 @@ CREATE TABLE donkey
 	REFERENCES packAnimal(id)
 );
 
-CREATE TABLE horse 
+CREATE TABLE IF NOT EXISTS horse 
 (
 	 id INT PRIMARY KEY AUTO_INCREMENT,
-    animal_name CHAR(50),
+    animal_name VARCHAR(50),
     birthday DATE,
     commands TEXT,
     packAnimal_id INT,
@@ -141,15 +141,15 @@ DROP TABLE donkey;
 
 RENAME TABLE horse TO horse_donkey;
 
-CREATE TABLE young_animal (
+CREATE TABLE IF NOT EXISTS young_animal (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	animal_name CHAR(50),
+	animal_name VARCHAR(50),
     commands TEXT,
     birthday DATE,
     age TEXT
 );
 
-DELIMITER $$
+DELIMITER //
 CREATE FUNCTION age_animal (date_b DATE)
 RETURNS TEXT
 DETERMINISTIC
@@ -162,7 +162,7 @@ BEGIN
             ' month'
         );
 	RETURN res;
-END $$
+END //
 DELIMITER ;
 
 INSERT INTO young_animal (animal_name, commands, birthday, age)
@@ -185,7 +185,8 @@ WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) BETWEEN 1 AND 3;
 SET SQL_SAFE_UPDATES = 0;
 
 DELETE FROM cat 
-WHERE TIMESTAMPDIFF(YEAR, cat.birthday, CURDATE()) IN (1, 2, 3);
+-- WHERE TIMESTAMPDIFF(YEAR, cat.birthday, CURDATE()) IN (1, 2, 3);
+WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) BETWEEN 1 AND 3;
 
 DELETE FROM dog 
 WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) BETWEEN 1 AND 3;
@@ -202,7 +203,7 @@ WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) BETWEEN 1 AND 3;
 
 CREATE TABLE animals (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	animal_name CHAR(50),
+	animal_name VARCHAR(50),
     commands TEXT,
     birthday DATE,
     age TEXT,
@@ -228,3 +229,5 @@ FROM horse_donkey;
 INSERT INTO animals (animal_name, commands, birthday, age, animal_type)
 SELECT animal_name, commands, birthday, age_animal(birthday), 'young_animals'
 FROM young_animal;
+
+
